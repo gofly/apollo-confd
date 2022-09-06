@@ -1,0 +1,19 @@
+apollo:
+  api: http://10.162.12.169:8080
+  app_id: WSC
+  cluster: default
+  namespaces: ["application", "database.json"]
+  secret: 7768675a415e41a482cbdcd9a3f09770
+watch:
+  - onchange: echo
+    groups:
+      - path: ./config
+        keys:
+          - application:web.yaml
+          - application:service.yaml
+  - onchange: echo
+    groups:
+      - path: ./config
+        keys:
+          - application:web1.yaml
+          - application:service.yaml
